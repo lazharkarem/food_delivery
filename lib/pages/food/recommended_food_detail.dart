@@ -2,27 +2,41 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/controllers/recommended_product_controller.dart';
+import 'package:food_delivery/routes/route_helper.dart';
+import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/expandable_text_widget.dart';
+import 'package:get/get.dart';
 
-class RecommandedFoodDetail extends StatelessWidget {
-  const RecommandedFoodDetail({Key? key}) : super(key: key);
+class RecommendedFoodDetail extends StatelessWidget {
+  final int pageId;
+  const RecommendedFoodDetail({Key? key, required this.pageId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var product =
+        Get.find<RecommendedProductController>().recommendedProductList[pageId];
     return Scaffold(
       backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             toolbarHeight: 70,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(icon: Icons.clear),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(RouteHelper.getIntial());
+                  },
+                  child: AppIcon(icon: Icons.clear),
+                ),
                 AppIcon(icon: Icons.shopping_basket_outlined)
               ],
             ),
@@ -32,7 +46,7 @@ class RecommandedFoodDetail extends StatelessWidget {
                 child: Center(
                     child: BigText(
                   size: Dimensions.font26,
-                  text: "Chinese Side",
+                  text: product.name!,
                 )),
                 width: double.maxFinite,
                 padding: EdgeInsets.only(top: 5, bottom: 10),
@@ -47,8 +61,8 @@ class RecommandedFoodDetail extends StatelessWidget {
             backgroundColor: AppColors.yellowColor,
             expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "assets/image/food0.png",
+              background: Image.network(
+                AppConstants.BASE_URL + AppConstants.UPLOAD_URL + product.img!,
                 width: double.maxFinite,
                 fit: BoxFit.cover,
               ),
@@ -58,9 +72,7 @@ class RecommandedFoodDetail extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  child: ExpandableTextWidget(
-                      text:
-                          "//expandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable texexpandable//expandable text widget//expandable text widget//expandable text widget//expandexpandable//expandable text widget//expandable text widget//expandable text widget//expandableexpandable//expandable text widget//expandable text widget//expandable text widget//expandableexpandable//expandable text widget//expandable text widget//expandable text widget//expandableexpandable//expandable text widget//expandable text widget//expandable text widget//expandableable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widgettext widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget//expandable text widget"),
+                  child: ExpandableTextWidget(text: product.description!),
                   margin: EdgeInsets.only(
                       left: Dimensions.width20, right: Dimensions.width20),
                 )
@@ -88,7 +100,7 @@ class RecommandedFoodDetail extends StatelessWidget {
                     backgroundColor: AppColors.mainColor,
                     icon: Icons.remove),
                 BigText(
-                  text: "\$12.88" + " X " + "0",
+                  text: "\$ ${product.price!}  X  0",
                   color: AppColors.mainblackColor,
                   size: Dimensions.font26,
                 ),
