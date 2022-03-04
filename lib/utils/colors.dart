@@ -15,4 +15,5 @@ class AppColors {
   static final Color mainblackColor = const Color(0xFF332d2b);
   //static final Color yellowColor= const Color (0xFFfa7552) ;
   static final Color yellowColor = const Color(0xFFffd379);
+  static final Color amberAccent = const Color(0xFFffd379);
 }
