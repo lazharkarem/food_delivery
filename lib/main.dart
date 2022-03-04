@@ -32,9 +32,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: CartPage(),
-      //initialRoute: RouteHelper.initial,
-      //getPages: RouteHelper.routes,
+      initialRoute: RouteHelper.getIntial(),
+      getPages: RouteHelper.routes,
     );
   }
 }
