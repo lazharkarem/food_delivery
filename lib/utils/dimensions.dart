@@ -42,4 +42,7 @@ class Dimensions {
 
   //botton height
   static double bottonHeightBar = screenHeight / 7.03;
+
+  //Splash screen dimensions
+  static double splashImg = screenHeight / 3.38;
 }
