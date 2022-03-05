@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 import 'package:food_delivery/models/products_model.dart';
 
 class CartModel {
@@ -30,5 +32,18 @@ class CartModel {
     isExist = json['isExist'];
     time = json['time'];
     product = ProductModel.fromJson(json['product']);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": this.id,
+      "name": this.name,
+      "price": this.price,
+      "img": this.img,
+      "quantity": this.quantity,
+      "isExist": this.isExist,
+      "time": this.time,
+      "product": this.product!.toJson(),
+    };
   }
 }
