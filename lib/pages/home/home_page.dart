@@ -11,6 +11,8 @@ import 'package:food_delivery/pages/home/main_food_page.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
+import '../auth/sign_in_page.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -24,7 +26,9 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    SignUpPage(),
+    Container(
+      child: Text("History Page"),
+    ),
     CartHistory(),
     AccountPage(),
   ];
