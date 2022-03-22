@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/controllers/auth_controller.dart';
+import 'package:food_delivery/controllers/cart_controller.dart';
+import 'package:food_delivery/routes/route_helper.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/account_widget.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({
@@ -111,23 +115,35 @@ class AccountPage extends StatelessWidget {
                           size: Dimensions.height10 * 5,
                         ),
                         bigText: BigText(
-                          text: "Your Address",
+                          text: "Messages",
                         )),
                     SizedBox(
                       height: Dimensions.height20,
                     ),
                     //message
-                    AccountWidget(
-                        appIcon: AppIcon(
-                          icon: Icons.message_outlined,
-                          backgroundColor: Colors.redAccent,
-                          iconColor: Colors.white,
-                          iconSize: Dimensions.height10 * 5 / 2,
-                          size: Dimensions.height10 * 5,
-                        ),
-                        bigText: BigText(
-                          text: "Your Address",
-                        )),
+                    GestureDetector(
+                      onTap: () {
+                        if (Get.find<AuthController>().userLoggedIn()) {
+                          Get.find<AuthController>().clearSharedData();
+                          Get.find<CartController>().clear();
+                          Get.find<CartController>().clearCartHistory();
+                          Get.offNamed(RouteHelper.getSignInPage());
+                        } else {
+                          print("you logged out");
+                        }
+                      },
+                      child: AccountWidget(
+                          appIcon: AppIcon(
+                            icon: Icons.logout,
+                            backgroundColor: Colors.redAccent,
+                            iconColor: Colors.white,
+                            iconSize: Dimensions.height10 * 5 / 2,
+                            size: Dimensions.height10 * 5,
+                          ),
+                          bigText: BigText(
+                            text: "Logout",
+                          )),
+                    ),
                     SizedBox(
                       height: Dimensions.height20,
                     ),
