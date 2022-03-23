@@ -83,7 +83,7 @@ class SignInPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Helo",
+                                "Hello",
                                 style: TextStyle(
                                     fontSize: Dimensions.font20 * 3 +
                                         Dimensions.font20 / 2,
