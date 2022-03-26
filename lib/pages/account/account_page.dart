@@ -1,18 +1,20 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:food_delivery/base/custom_loader.dart';
-import 'package:food_delivery/controllers/auth_controller.dart';
-import 'package:food_delivery/controllers/cart_controller.dart';
-import 'package:food_delivery/controllers/location_controller.dart';
-import 'package:food_delivery/controllers/user_controller.dart';
-import 'package:food_delivery/routes/route_helper.dart';
-import 'package:food_delivery/utils/colors.dart';
-import 'package:food_delivery/utils/dimensions.dart';
-import 'package:food_delivery/widgets/account_widget.dart';
-import 'package:food_delivery/widgets/app_icon.dart';
-import 'package:food_delivery/widgets/big_text.dart';
+
 import 'package:get/get.dart';
+
+import '../../base/custom_loader.dart';
+import '../../controllers/auth_controller.dart';
+import '../../controllers/cart_controller.dart';
+import '../../controllers/location_controller.dart';
+import '../../controllers/user_controller.dart';
+import '../../routes/route_helper.dart';
+import '../../utils/colors.dart';
+import '../../utils/dimensions.dart';
+import '../../widgets/account_widget.dart';
+import '../../widgets/app_icon.dart';
+import '../../widgets/big_text.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({

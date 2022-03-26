@@ -2,19 +2,20 @@ import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/controllers/auth_controller.dart';
-import 'package:food_delivery/controllers/location_controller.dart';
-import 'package:food_delivery/controllers/user_controller.dart';
-import 'package:food_delivery/models/address_model.dart';
-import 'package:food_delivery/routes/route_helper.dart';
-import 'package:food_delivery/utils/colors.dart';
-import 'package:food_delivery/utils/dimensions.dart';
-import 'package:food_delivery/widgets/app_text_field.dart';
-import 'package:food_delivery/widgets/big_text.dart';
+
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../controllers/auth_controller.dart';
+import '../../controllers/location_controller.dart';
+import '../../controllers/user_controller.dart';
+import '../../models/address_model.dart';
+import '../../routes/route_helper.dart';
+import '../../utils/colors.dart';
+import '../../utils/dimensions.dart';
 import '../../widgets/app_icon.dart';
+import '../../widgets/app_text_field.dart';
+import '../../widgets/big_text.dart';
 
 class AddAddressPage extends StatefulWidget {
   const AddAddressPage({Key? key}) : super(key: key);

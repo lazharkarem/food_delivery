@@ -2,14 +2,13 @@
 
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/routes/route_helper.dart';
-import 'package:food_delivery/utils/dimensions.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/popular_product_controller.dart';
 import '../../controllers/recommended_product_controller.dart';
+import '../../routes/route_helper.dart';
+import '../../utils/dimensions.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);

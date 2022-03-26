@@ -1,8 +1,8 @@
-import 'package:food_delivery/data/repository/user_repo.dart';
-import 'package:food_delivery/models/user_model.dart';
 import 'package:get/get.dart';
 
+import '../data/repository/user_repo.dart';
 import '../models/response_model.dart';
+import '../models/user_model.dart';
 
 class UserController extends GetxController implements GetxService {
   final UserRepo userRepo;

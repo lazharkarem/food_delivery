@@ -1,6 +1,6 @@
 // ignore_for_file: unnecessary_this
 
-import 'package:food_delivery/models/products_model.dart';
+import 'products_model.dart';
 
 class CartModel {
   int? id;

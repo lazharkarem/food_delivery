@@ -2,13 +2,14 @@
 
 import 'dart:convert';
 
-import 'package:food_delivery/data/repository/location_repo.dart';
-import 'package:food_delivery/models/address_model.dart';
-import 'package:food_delivery/models/response_model.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../data/repository/location_repo.dart';
+import '../models/address_model.dart';
+import '../models/response_model.dart';
 
 class LocationController extends GetxController implements GetxService {
   LocationRepo locationRepo;

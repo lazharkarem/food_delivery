@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/controllers/cart_controller.dart';
-import 'package:food_delivery/data/repository/popular_product_repo.dart';
-import 'package:food_delivery/models/cart_model.dart';
+
 import 'package:get/get.dart';
 import 'package:get/get_connect.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
+import '../data/repository/popular_product_repo.dart';
+import '../models/cart_model.dart';
 import '../models/products_model.dart';
 import '../utils/colors.dart';
+import 'cart_controller.dart';
 
 class PopularProductController extends GetxController {
   final PopularProductRepo popularProductRepo;

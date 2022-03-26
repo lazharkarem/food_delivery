@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:food_delivery/pages/address/add_address_page.dart';
-import 'package:food_delivery/pages/food/popular_food_detail.dart';
-import 'package:food_delivery/pages/food/recommended_food_detail.dart';
-import 'package:food_delivery/pages/home/home_page.dart';
-import 'package:food_delivery/pages/home/main_food_page.dart';
-import 'package:food_delivery/pages/splash/splash_page.dart';
 import 'package:get/route_manager.dart';
 
+import '../pages/address/add_address_page.dart';
 import '../pages/auth/sign_in_page.dart';
 import '../pages/cart/cart_page.dart';
+import '../pages/food/popular_food_detail.dart';
+import '../pages/food/recommended_food_detail.dart';
+import '../pages/home/home_page.dart';
+import '../pages/splash/splash_page.dart';
 
 class RouteHelper {
   static const String splashPage = "/splash-page";

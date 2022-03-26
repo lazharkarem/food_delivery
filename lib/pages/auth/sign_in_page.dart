@@ -5,19 +5,20 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/base/custom_loader.dart';
-import 'package:food_delivery/pages/auth/sign_up_page.dart';
-import 'package:food_delivery/routes/route_helper.dart';
-import 'package:food_delivery/utils/colors.dart';
-import 'package:food_delivery/utils/dimensions.dart';
-import 'package:food_delivery/widgets/app_text_field.dart';
-import 'package:food_delivery/widgets/big_text.dart';
+
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 
+import '../../base/custom_loader.dart';
 import '../../base/show_custom_snackBar.dart';
 import '../../controllers/auth_controller.dart';
 import '../../models/signup_body_model.dart';
+import '../../routes/route_helper.dart';
+import '../../utils/colors.dart';
+import '../../utils/dimensions.dart';
+import '../../widgets/app_text_field.dart';
+import '../../widgets/big_text.dart';
+import 'sign_up_page.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);

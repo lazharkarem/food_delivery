@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/utils/colors.dart';
-import 'package:food_delivery/utils/dimensions.dart';
-import 'package:food_delivery/widgets/small_text.dart';
+
+import '../utils/colors.dart';
+import '../utils/dimensions.dart';
+import 'small_text.dart';
 
 class ExpandableTextWidget extends StatefulWidget {
   final String text;

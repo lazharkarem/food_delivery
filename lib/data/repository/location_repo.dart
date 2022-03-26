@@ -1,10 +1,10 @@
-import 'package:food_delivery/data/api/api_client.dart';
-import 'package:food_delivery/models/address_model.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../models/address_model.dart';
 import '../../utils/app_constants.dart';
+import '../api/api_client.dart';
 
 class LocationRepo {
   final ApiClient apiClient;

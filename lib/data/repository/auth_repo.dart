@@ -1,8 +1,9 @@
-import 'package:food_delivery/data/api/api_client.dart';
-import 'package:food_delivery/models/signup_body_model.dart';
-import 'package:food_delivery/utils/app_constants.dart';
 import 'package:get/get_connect.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../models/signup_body_model.dart';
+import '../../utils/app_constants.dart';
+import '../api/api_client.dart';
 
 class AuthRepo {
   final ApiClient apiClient;

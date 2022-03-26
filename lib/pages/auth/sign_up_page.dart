@@ -3,17 +3,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/base/custom_loader.dart';
-import 'package:food_delivery/base/show_custom_snackbar.dart';
-import 'package:food_delivery/controllers/auth_controller.dart';
-import 'package:food_delivery/models/signup_body_model.dart';
-import 'package:food_delivery/routes/route_helper.dart';
-import 'package:food_delivery/utils/colors.dart';
-import 'package:food_delivery/utils/dimensions.dart';
-import 'package:food_delivery/widgets/app_text_field.dart';
-import 'package:food_delivery/widgets/big_text.dart';
+
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
+
+import '../../base/custom_loader.dart';
+import '../../base/show_custom_snackBar.dart';
+import '../../controllers/auth_controller.dart';
+import '../../models/signup_body_model.dart';
+import '../../routes/route_helper.dart';
+import '../../utils/colors.dart';
+import '../../utils/dimensions.dart';
+import '../../widgets/app_text_field.dart';
+import '../../widgets/big_text.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);

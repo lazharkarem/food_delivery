@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/data/repository/cart_repo.dart';
-import 'package:food_delivery/models/products_model.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
+import '../data/repository/cart_repo.dart';
 import '../models/cart_model.dart';
+import '../models/products_model.dart';
 import '../utils/colors.dart';
 
 class CartController extends GetxController {
