@@ -533,8 +533,13 @@ class CartPage extends StatelessWidget {
       Get.find<CartController>().clear();
       Get.find<CartController>().removeCartSharedPreference();
       Get.find<CartController>().addToHistory();
-      Get.offNamed(RouteHelper.getPaymentPage(
-          orderID, Get.find<UserController>().userModel!.id));
+
+      if (Get.find<OrderController>().paymentIndex == 0) {
+        Get.offNamed(RouteHelper.getOrderSuccessPage(orderID, "success"));
+      } else {
+        Get.offNamed(RouteHelper.getPaymentPage(
+            orderID, Get.find<UserController>().userModel!.id));
+      }
     } else {
       showCustomSnackBar(message);
     }
