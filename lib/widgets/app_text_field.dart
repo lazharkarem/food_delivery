@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
 
@@ -10,12 +10,14 @@ class AppTextField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   bool isObscure;
+  bool maxLines;
   AppTextField(
       {Key? key,
       required this.textController,
       required this.hintText,
       required this.icon,
-      this.isObscure = false})
+      this.isObscure = false,
+      this.maxLines = false})
       : super(key: key);
 
   @override
@@ -34,6 +36,7 @@ class AppTextField extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.2))
           ]),
       child: TextField(
+        maxLines: maxLines ? 3 : 1,
         obscureText: isObscure ? true : false,
         controller: textController,
         decoration: InputDecoration(

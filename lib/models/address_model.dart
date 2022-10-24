@@ -30,7 +30,7 @@ class AddressModel {
   String get latitude => _latitude;
   String get longitude => _longitude;
 
-  AddressModel.fronJson(Map<String, dynamic> json) {
+  AddressModel.fromJson(Map<String, dynamic> json) {
     _id = json["id"];
     _addressType = json["address_type"] ?? "";
     _contactPersonNumber = json["contact_person_number"] ?? "";

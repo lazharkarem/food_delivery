@@ -1,4 +1,6 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get_connect.dart';
+import 'package:get/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../models/signup_body_model.dart';
@@ -51,4 +53,52 @@ class AuthRepo {
     apiClient.updateHeader('');
     return true;
   }
+
+  // Future<Response> updateToken() async {
+  //   String? _deviceToken;
+  //   if (GetPlatform.isIOS && !GetPlatform.isWeb) {
+  //     FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+  //         alert: true, badge: true, sound: true);
+  //     NotificationSettings settings =
+  //         await FirebaseMessaging.instance.requestPermission(
+  //       alert: true,
+  //       announcement: false,
+  //       badge: true,
+  //       carPlay: false,
+  //       criticalAlert: false,
+  //       provisional: false,
+  //       sound: true,
+  //     );
+  //     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+  //       _deviceToken = await _saveDeviceToken();
+  //       print("My token is " + _deviceToken!);
+  //     }
+  //   } else {
+  //     _deviceToken = await _saveDeviceToken();
+  //     print("My token is " + _deviceToken!);
+  //   }
+  //   if (!GetPlatform.isWeb) {
+  //     // FirebaseMessaging.instance.subscribeToTopic(AppConstants.TOPIC);
+  //   }
+  //   return await apiClient.postData(AppConstants.TOKEN_URI,
+  //       {"_method": "PUT", "cm_firebase_token": _deviceToken});
+  // }
+
+  // Future<String?> _saveDeviceToken() async {
+  //   String? _deviceToken = '@';
+  //   if (!GetPlatform.isWeb) {
+  //     try {
+  //       FirebaseMessaging.instance.requestPermission();
+  //       _deviceToken = await FirebaseMessaging.instance.getToken();
+  //       //await FirebaseMessaging.registerForRemoteNotifications();
+  //     } catch (e) {
+  //       print("could not get token");
+  //       print(e.toString());
+  //     }
+  //   }
+  //   if (_deviceToken != null) {
+  //     print('--------Device Token--------' + _deviceToken);
+  //   }
+  //   return _deviceToken;
+  // }
 }

@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:food_delivery/controllers/auth_controller.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/popular_product_controller.dart';
@@ -30,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    //Get.find<AuthController>().updateToken();
     _loadResource();
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 2))

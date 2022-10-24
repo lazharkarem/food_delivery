@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, unused_field
 
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/order/order_page.dart';
 
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
@@ -22,9 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    Container(
-      child: Text("History Page"),
-    ),
+    OrderPage(),
     CartHistory(),
     AccountPage(),
   ];

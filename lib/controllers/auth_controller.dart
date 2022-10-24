@@ -56,4 +56,8 @@ class AuthController extends GetxController implements GetxService {
   bool clearSharedData() {
     return authRepo.clearSharedData();
   }
+
+  // Future<void> updateToken() async {
+  //   await authRepo.updateToken();
+  // }
 }

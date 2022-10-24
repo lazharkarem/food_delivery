@@ -1,3 +1,5 @@
+import 'package:food_delivery/controllers/order_controller.dart';
+import 'package:food_delivery/data/repository/order_repo.dart';
 import 'package:get/instance_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -38,6 +40,8 @@ Future<void> init() async {
   Get.lazyPut(
       () => LocationRepo(apiClient: Get.find(), sharedPreferences: Get.find()));
 
+  Get.lazyPut(() => OrderRepo(apiClient: Get.find()), fenix: true);
+
   //controllers
   Get.lazyPut(() => AuthController(authRepo: Get.find()), fenix: true);
   Get.lazyPut(() => UserController(userRepo: Get.find()), fenix: true);
@@ -53,4 +57,5 @@ Future<void> init() async {
           ),
       fenix: true);
   Get.lazyPut(() => LocationController(locationRepo: Get.find()), fenix: true);
+  Get.lazyPut(() => OrderController(orderRepo: Get.find()));
 }
